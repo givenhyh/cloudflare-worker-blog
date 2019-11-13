@@ -2,21 +2,21 @@
 const github_base = "givenhyh/cloudflare-worker-blog";
 
 // 设置站点信息
-var default_title	 = "Given blog";					// 站点标题（显示在浏览器标题栏）
-var default_intitle	 = "Given blog";								// 站点名称（显示在首页）
-var default_description  = "欢迎访问 Given blog。"; 	// 站点简介，有利于 SEO
-var site_domain		 = "test.given.workers.dev";								// 站点域名
-var site_subtitle	 = "在cf worker上部署的Blog";							// 站点副标题
-var site_favicon	 = "https://cn.tql.ink:4443/gitea/img/favicon.png";				// 站点 Logo
+var default_title	 = "Given技术窝";					// 站点标题（显示在浏览器标题栏）
+var default_intitle	 = "Given技术窝";								// 站点名称（显示在首页）
+var default_description  = "欢迎访问 Given 技术窝。"; 	// 站点简介，有利于 SEO
+var site_domain		 = "blog.2890.ltd";								// 站点域名
+var site_subtitle	 = "部署在cloudflare Workers上的Blog";							// 站点副标题
+var site_favicon	 = "https://cdn.2890.ltd/d74a3de2bf526638b867b62f2caccda8.jpeg";				// 站点 Logo
 
 // 博主信息
 var owner_name = "Given";									// 博主名字
-var owner_logo = "https://secure.gravatar.com/avatar/80962ca1ced98d0e679b2bc315d049f2?s=256"	// 博主头像
-var owner_desc = "wdnmd";					// 博主简介
+var owner_logo = "https://cdn.2890.ltd/d74a3de2bf526638b867b62f2caccda8.jpeg"	// 博主头像
+var owner_desc = "一个人形自走鸽，可以使用PHP,C++，Python等进行开发";					// 博主简介
 
 // 设置站点资源文件地址
 var css_bootstrap	 = "https://cdn.2890.ltd/bootstrap.min.css";	// Boostrap css 文件地址
-var css_hljs_github   = "https://cdn.2890.ltd/highlight.js/github.css";  // Highlight js css 地址
+var css_hljs_github   = "https://cdn.2890.ltd/github.css";  // Highlight js css 地址
 var js_jquery		 = "https://cdn.2890.ltd/jquery.min.js";		// JQuery 地址
 var js_bootstrap	= "https://cdn.2890.ltd/bootstrap.min.js";	// Bootstrap 地址
 var js_instantclick   = "https://cdn.2890.ltd/instantclick.min.js";	// InstantClick 地址
@@ -43,17 +43,17 @@ var header = `<!DOCTYPE HTML>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=11">
-		<meta name="application-name" content="SakuraFrp Blog">
+		<meta name="application-name" content="Given Blog">
 		<meta name="msapplication-TileColor" content="#F1F1F1">
 		<link rel="shortcut icon" href="${site_favicon}" />
 		<meta name="description" content="{description}">
 		<link rel="stylesheet" href="${css_bootstrap}" crossorigin="anonymous">
 		<link rel="stylesheet" href="${css_hljs_github}">
 		<title>{title}{title_2}</title>
-		<style type="text/css">.pageid{margin-bottom:-26px}code{color:#484848;background-color:#f5f5f5;border-radius:0px;border:1px solid #dadada;}pre>code{color:unset;background-color:unset;border-radius:unset;border:0px;}.post-a {color: #000;text-decoration: none ! important;}.post-box {padding: 12px 20px 12px 20px;border-bottom: 1px solid rgba(0,0,0,0.07);cursor: pointer;border-left: 0px solid rgba(66, 66, 66, 0);transition-duration: 0.3s;}.post-box:hover {transition-duration: 0.3s;border-left: 5px solid rgba(66, 66, 66, 0.15);}.thread h2 {border-bottom: 1px solid rgb(238,238,238);padding-bottom: 10px;}.editor-preview pre, .editor-preview-side pre{padding: 0.5em;}.hljs{background: unset ! important;padding: 0px;}.CodeMirror{height: calc(100% - 320px);min-height: 360px;}.msgid{font-family:Consolas;}.tooltip {word-break: break-all;}h2 a{font-weight: 400;}body{/*background:url(https://i.natfrp.org/cbf5973ce9da283bc9abe307cdea7f30.jpg);*/font-family:'-apple-system','BlinkMacSystemFont','Segoe UI','Helvetica','Arial','sans-serif','Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol' ! important;font-weight:400;background-attachment:fixed;background-size:cover;background-repeat:no-repeat;background-position:center;}h2 a{color: #000;} h2 a:hover{color: #000; text-decoration: none;}.full-width{width: 100%;}.thread img{vertical-align:text-bottom ! important;max-width:100% ! important;margin-top:8px;margin-bottom:8px;}.thread table{display:block;width:100%;overflow:auto;margin-bottom:8px;}.thread table tr{background-color:#fff;border-top:1px solid #c6cbd1;}.thread table tr:nth-child(2n){background-color:#f7f7f7;}.thread table th,.thread table td{padding:10px 12px 0px 12px;border:1px solid #dfe2e5;font-size:14px;}.thread table th {padding-bottom: 10px;background: #f7f7f7;}.thread pre{margin-bottom:16px;}pre{border:none ! important;}blockquote{font-size:15px ! important;}@media screen and(max-width:768px){.copyright{text-align:center;}}</style>
+		<style type="text/css">#instantclick-bar{background:#66aabb}hr{border-top:1px solid rgba(255,255,255,0.3);}a{color:#cbb283;text-decoration:none;}a:focus,a:hover{color:#786344;text-decoration:underline;}.pageid{margin-bottom:-26px}code{color:#f4cf5c;background-color:rgba(0,0,0,0.655);border-radius:0px;border:1px solid rgba(255,255,255,0.2);margin-left:3px;margin-right:3px;}pre>code{color:#FFF;background-color:unset;border-radius:unset;border:0px;}.post-a{color:#FFF;text-decoration:none ! important;}.post-a:hover{color:#cbb283;}.post-box{padding:12px 20px 12px 20px;border-bottom:1px solid rgba(0,0,0,0.07);cursor:pointer;border-left:0px solid rgba(66,66,66,0);transition-duration:0.3s;}.post-box:hover{transition-duration:0.3s;border-left:5px solid #a78b56;}.thread h2{border-bottom:1px solid rgb(238,238,238);padding-bottom:10px;}.editor-preview pre,.editor-preview-side pre{padding:0.5em;}.hljs{background:unset ! important;padding:0px;}.CodeMirror{height:calc(100% - 320px);min-height:360px;}.msgid{font-family:Consolas;}.tooltip{word-break:break-all;}h2 a{font-weight:400;}body{background:url(https://fy4a.2890.ltd/FY4A_DISK.JPG);font-family:'-apple-system','BlinkMacSystemFont','Segoe UI','Helvetica','Arial','sans-serif','Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol' ! important;font-weight:400;background-attachment:fixed;background-size:cover;background-repeat:no-repeat;background-position:top;color:#FFF;text-shadow:0px 0px 8px #000;}body:before{content:"";display:block;position:fixed;left:0;top:0;width:100%;height:100%;z-index:-10;background-image:url(https://fy4a.2890.ltd/FY4A_DISK.JPG);background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;}h2 a:hover{text-decoration:none;width:100%;}.thread img{vertical-align:text-bottom ! important;max-width:100% ! important;margin-top:8px;margin-bottom:8px;}.thread table{display:block;width:100%;overflow:auto;margin-bottom:8px;}.thread table tr{border-top:1px solid rgba(0,0,0,0.3);}.thread table tr:nth-child(2n){background-color:rgba(0,0,0,0.4);}.thread table th,.thread table td{padding:10px 12px 0px 12px;border:1px solid rgba(255,255,255,0.3);font-size:14px;}.thread table th{padding-bottom:10px;background:rgba(0,0,0,0.4);}.thread pre{margin-bottom:16px;background:rgba(0,0,0,0.4);box-shadow:0px 0px 16px rgba(0,0,0,0.7);}pre{border:none ! important;}blockquote{font-size:15px ! important;border-color:#a78b56;}.comments-body .comment-input{background:none;border-color:rgba(255,255,255,0.3) ! important;color:#FFF ! important;}.comments-body .comment-input:focus{border-color:#d0a85c ! important;outline:0 ! important;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #d0a85c ! important;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #d0a85c ! important;}.btn-golden,#submitdata{color:#fff;background-color:#d0a85c;border-color:#d0a24b;}.btn-golden:hover,#submitdata:hover{background:#b78c3a;border-color:#c39641;}@media screen and(max-width:768px){.copyright{text-align:center;}}</style>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container" id="wz">
 			<div class="row">
 				<div class="col-sm-12">
 					<h2><a href="/" class="post-a">{intitle}</a></h2>
@@ -251,7 +251,7 @@ async function bloghandle(request) {
 			};
 		}
 		data += `</div>
-						<p class="text-center{isunknown}"><small>发表于 ${ctime}</small></p>
+						<p class="text-center{isunknown}"><small>发表于 ${tmptime}</small></p>
 						<textarea id="textdata" style="display: none;">`;
 		var url = "https://raw.githubusercontent.com/" + github_base + "/master/posts" + urls.pathname + ".md";
 		const init = {
@@ -264,7 +264,15 @@ async function bloghandle(request) {
 			description = resptxt.substring(0, 128).replace(/"/ig, "").replace(/\n/g, " ");
 			data += `</textarea>
 					<hr>
+          <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
 					<div id="comments">评论区加载中 qwq</div>
+              <script>
+        new Valine({
+            el: '#comments',
+            appId: 'xdGpHXJTx90pJ8L6cXpogOKF-MdYXbMMI',
+            appKey: 'Wz1wErEML3O4zG5SugKU1RTT'
+        })
+    </script>
 				`;
 		} else {
 			data += `### 404 Not Found
@@ -272,7 +280,6 @@ async function bloghandle(request) {
 - 该文章已被删除
 - 该文章已经更改名称
 - 您输入的链接不正确
-
 <a href="/">返回 ${default_intitle} 首页</a>
 					</textarea>
 				`;
@@ -293,14 +300,15 @@ async function bloghandle(request) {
 						<hr>
 						<div class="text-left">
 							<h4>友情链接</h4>
-							<p><a href="https://www.natfrp.org/" target="_blank">Sakura Frp</a></p>
+							<p><a href="https://2890.ltd/" target="_blank">自己的主站</a></p>
+							<p><a href="https://www.qtatelier.com/" target="_blank">WEIの小站</a></p>
+							<p><a href="https://pghk.xyz/" target="_blank">FutureApple的（低速）博客</a></p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-				<p>Powered by CloudFlare Workers | <a href="https://github.com/kasuganosoras/cloudflare-worker-blog" target="_blank">Github</a></p>
 				<p>&copy; 2019 ${default_intitle}</p>
 				<br><br>
 				</div>
