@@ -57,7 +57,7 @@ var header = `<!DOCTYPE HTML>
 			<div class="row">
 				<div class="col-sm-12">
 					<h2><a href="/" class="post-a">{intitle}</a></h2>
-					<p>${site_subtitle}</p>
+					<p><a href="/" class="post-a">${site_subtitle}</a></p>
 					<hr>
 				</div>
 				<div class="col-sm-9">
@@ -294,8 +294,8 @@ async function bloghandle(request) {
 	data += `</div>
 				<div class="col-sm-3">
 					<div style="padding: 16px;text-align: center;">
-						<img src="${owner_logo}" style="max-width: 220px;width: 100%;border-radius: 50%;">
-						<h3>${owner_name}</h3>
+						<a href="/"><img src="${owner_logo}" style="max-width: 220px;width: 100%;border-radius: 50%;"></a>
+						<h3><a href="/" class="post-a">${owner_name}</a></h3>
 						<p class="text-left">${owner_desc}</p>
 						<hr>
 						<div class="text-left">
