@@ -271,7 +271,6 @@ async function bloghandle(request) {
             el: '#comments',
             appId: 'xdGpHXJTx90pJ8L6cXpogOKF-MdYXbMMI',
             appKey: 'Wz1wErEML3O4zG5SugKU1RTT'
-            path: 'window.location.pathname'
         })
     </script>
 				`;
