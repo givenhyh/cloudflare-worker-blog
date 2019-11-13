@@ -1,17 +1,5 @@
----
-layout: post
-cid: 26
-title: AirDroping|新的在线airdrop
-slug: 26
-date: 2019/10/10 12:21:00
-updated: 2019/10/15 18:59:59
-status: publish
-author: given
-categories: 
-  - 网络
-tags: 
----
 
+ # AirDropping|新的在线airdrop
 
 AirDropping是一个隔空投送的网页应用程序，您可以使用他来传输一些大文件。
 
