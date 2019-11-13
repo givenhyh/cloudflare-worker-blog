@@ -321,6 +321,7 @@ async function bloghandle(request) {
 		<script src="${js_showdown_table}" type="text/javascript"></script>
 		<script src="${js_highlight}"></script>
 		<script src="${js_highlight_pack}"></script>
+		<!-- 引入 InstantClick --> <script src="https://cdn.2890.ltd/instantclick.min.js" data-no-instant></script> <script data-no-instant>InstantClick.init();</script> <!-- 到这里结束 -->
 		<script type="text/javascript">
 			var init = {
 			site: "${site_domain}",
@@ -332,6 +333,15 @@ async function bloghandle(request) {
 			md.setOption('simpleLineBreaks', true);
 			md.setOption('openLinksInNewWindow', true);
 			md.setOption('noHeaderId', true);
+			InstantClick.on('change', function() {
+				try {
+					$(".thread").html(md.makeHtml($("#textdata").val()));
+					document.querySelectorAll('pre code').forEach(function(e) {
+						hljs.highlightBlock(e);
+					});
+				} catch(e) {}
+			}
+			);
 			window.onload = function() {
 				try {
 					$(".thread").html(md.makeHtml($("#textdata").val()));
