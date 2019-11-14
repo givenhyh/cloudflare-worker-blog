@@ -265,14 +265,16 @@ async function bloghandle(request) {
 			data += `</textarea>
 					<hr>
           <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-					<div id="comments">评论区加载中 qwq</div>
-              <script>
-        new Valine({
-            el: '#comments',
-            appId: 'xdGpHXJTx90pJ8L6cXpogOKF-MdYXbMMI',
-            appKey: 'Wz1wErEML3O4zG5SugKU1RTT'
-        })
-    </script>
+					<div id="comments">
+					<script>
+					new Valine({
+						el: '#comments',
+						appId: 'xdGpHXJTx90pJ8L6cXpogOKF-MdYXbMMI',
+						appKey: 'Wz1wErEML3O4zG5SugKU1RTT'
+						})
+					</script>
+					</div>
+
 				`;
 		} else {
 			data += `### 404 Not Found
