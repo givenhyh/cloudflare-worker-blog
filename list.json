@@ -18,5 +18,10 @@
         "title": "自建KMS激活服务器:如何用CentOS安装KMS",
         "time": "2019-11-08",
         "file": "posts/2019-11-08-自建KMS激活服务器.md"
+    },
+    {
+        "title": "0成本bushu部署",
+        "time": "2019-11-08",
+        "file": "posts/部署cf_workers上的博客.md"
     }
 ]
