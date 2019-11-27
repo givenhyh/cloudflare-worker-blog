@@ -17,4 +17,4 @@
 获取到自己的****.workers.dev 
 域名 Cname 到(****.workers.dev)
 然后去 Workers 点击 ADD route
-输入自定义域名，例如 gd.mjj.com/* 后面要加上 /*，下面的 workers 选择刚才的项目
+输入自定义域名，例如 iloli.icu/* 后面要加上 /*，下面的 workers 选择刚才的项目
