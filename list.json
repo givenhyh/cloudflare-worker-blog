@@ -23,5 +23,10 @@
         "title": "0成本get自己的博客",
         "time": "2019-11-08",
         "file": "posts/部署cf_workers上的博客.md"
+    },
+    {
+        "title": "如何充分使用CloudFlare的免费账户",
+        "time": "2019-11-08",
+        "file": "posts/如何充分使用CloudFlare的免费账户.md"
     }
 ]
